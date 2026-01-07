@@ -4,7 +4,14 @@ module.exports = {
 
   presets: [require('nativewind/preset')],
   theme: {
-    extend: {},
+    screens: {
+      sm: '640px',
+      md: '780px',
+      lg: '1024',
+    },
+    extend: {
+      
+    },
   },
   plugins: [],
 };
