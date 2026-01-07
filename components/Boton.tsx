@@ -15,7 +15,8 @@ export function Boton({ texto, className, onPress }: BotonProps) {
     <Pressable
       onPress={onPress}
       className={clsx(
-        'w-52 rounded-md bg-blue-700 px-4 py-2 active:scale-90 active:bg-blue-900',
+        "w-52 my-4 rounded-md bg-blue-700 px-4 py-2 active:scale-90 active:bg-blue-900 transition-all duration-300 ease-in-out"
+        ,
         className
       )}>
       <Text className="text-center font-bold text-white">{texto}</Text>
