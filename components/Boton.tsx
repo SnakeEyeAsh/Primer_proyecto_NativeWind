@@ -1,6 +1,8 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import clsx from 'clsx';
+import { setColorScheme } from 'react-native/types_generated/Libraries/Utilities/Appearance';
+import { colorScheme } from 'nativewind';
 
 type BotonProps = {
   texto: string;

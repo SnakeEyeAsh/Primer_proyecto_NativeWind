@@ -5,7 +5,7 @@ import { MaterialIcons } from '@expo/vector-icons'
 export function Toolbar() {
   return (
 
-    <View className='w-full h-14 flex-row items-center bg-blue-700 justify-between lg:h-20 sm:h-16 p-5'>
+    <View className='w-full h-14 flex-row items-center bg-primary dark:bg-darkprimary justify-between lg:h-20 sm:h-16 px-4'>
       <View className='flex-row items-center gap-3'>
         <MaterialIcons name={"menu"} size={24} color={"white"} />
         <Text className='text-white ml-4 text-2lg font-bold'>Tutorial 27 App</Text>

@@ -1,10 +1,11 @@
 import './global.css';
 import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Toolbar } from './components/Toolbar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Boton } from 'components/Boton';
 import clsx from 'clsx';
+import { useColorScheme } from 'nativewind';
 
 export default function App() {
   const aleatorio = Math.floor(6 * Math.random());
@@ -16,20 +17,21 @@ export default function App() {
   "color-orange-500": aleatorio === 4,
 }
 
-// resto omitido
+const { colorScheme, setColorScheme } = useColorScheme();
+useEffect(() => setColorScheme("system"), [])
 
   return (
-    <View className="flex-1">
-      <View className="flex-1 items-center justify-top bg-blue-100">
+    <SafeAreaView className="flex-1" >
+      <View className="flex-1 items-center justify-top bg-background dark:bg-darkbackground">
         <Toolbar />
-        <Text className={`clsx(styles.texto, "color-red-500 sm:text-3xl lg:text-41")`}>App</Text>
-        <Text className={`clsx(styles.texto, "color-indigo-500 sm:text-3xl lg:text-41")`}>NativeWind</Text>
+        <Text className={clsx(styles.texto, "color-primary dark:color-darkprimary")}>App</Text>
+        <Text className={clsx(styles.texto, "color-secondary dark:color-darksecondary")}>NativeWind</Text>
         <Text className={clsx(styles.texto,colorTexto,aleatorio===0 && "bg-white")}>Texto de color Aleatorio</Text>
         <Boton 
           texto={'Boton'} 
-          onPress={() => console.log('hola')} />
+          onPress={()=>setColorScheme (colorScheme==="light"?"dark":"light")} />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
