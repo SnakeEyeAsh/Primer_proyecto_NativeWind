@@ -19,17 +19,17 @@ export default function App() {
 // resto omitido
 
   return (
-    <SafeAreaView className="flex-1">
-      <View className="flex-1 items-center justify-center bg-blue-100">
+    <View className="flex-1">
+      <View className="flex-1 items-center justify-top bg-blue-100">
         <Toolbar />
-        <Text className={`clsx(styles.texto, "color-red-500")`}>App</Text>
-        <Text className={`clsx(styles.texto, "color-indigo-500")`}>NativeWind</Text>
+        <Text className={`clsx(styles.texto, "color-red-500 sm:text-3xl lg:text-41")`}>App</Text>
+        <Text className={`clsx(styles.texto, "color-indigo-500 sm:text-3xl lg:text-41")`}>NativeWind</Text>
         <Text className={clsx(styles.texto,colorTexto,aleatorio===0 && "bg-white")}>Texto de color Aleatorio</Text>
         <Boton 
           texto={'Boton'} 
           onPress={() => console.log('hola')} />
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
